@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"  "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<body>
+
+        <script type="text/javascript" src="../phonegap.js">
+             // strangely needed when you have a config.xml file with phonegap build
+        </script>
+
+
+
+
+
+
+        <script type="text/javascript" charset="utf-8">
+
+
+
+
+
+
+
+
+        // onSuccess Callback
+        //
+        function onSuccess() {
+           // alert("playAudio():Audio Success");
+        }
+
+        // onError Callback 
+        //
+        function onError(error) {
+            alert('Error Code: '    + error.code  );
+        }
+
+
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+        <title>Media Example</title>
+
+
+
+See conclusions at the bottom of the page<br>
+
+
+
+<input type=button value="Create media 1 url http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3" onclick="{
+     document.my_media1 = new Media('http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3', onSuccess, onError);}">
+<input type=button value="Pre-Load"         onclick="{document.my_media1.play();document.my_media1.pause();}">
+<input type=button value="Play media url"   onclick="{document.my_media1.play()}">
+<input type=button value="Pause media url"  onclick="{document.my_media1.pause()}">
+<input type=button value="Stop"             onclick="{document.my_media1.stop()}">
+<input type=button value="Release Memory"   onclick="{document.my_media1.release();document.my_media1 = null;}">
+<br><br><br><br>
+
+
+<input type=button value="Create media 2 url /android_asset/www/PianoScale.mp3" onclick="{
+     document.my_media2 = new Media('/android_asset/www/PianoScale.mp3', onSuccess, onError);}">
+<input type=button value="Pre-Load"         onclick="{document.my_media2.play();document.my_media2.pause();}">
+<input type=button value="Play media url"   onclick="{document.my_media2.play()}">
+<input type=button value="Pause media url"  onclick="{document.my_media2.pause()}">
+<input type=button value="Stop"             onclick="{document.my_media2.stop()}">
+<input type=button value="Release Memory"   onclick="{document.my_media2.release();document.my_media2 = null;}">
+<br><br><br><br>
+
+Use the following to try local, or URL based files.   http://yourwebsite/yourfolder/test.mp3 Also try many different types. .mp3  .wav   .m4a should all work.<br>
+<input type=text id="mySrc1" size=70 value="http://yourwebsite/yourfolder/test.mp3"> 
+<input type=button value="Create media 3 textField" onclick="{
+     document.my_media3 = new Media(document.getElementById('mySrc1').value, onSuccess, onError);}">
+<input type=button value="Pre-Load"         onclick="{document.my_media3.play();document.my_media3.pause();}">
+<input type=button value="Play media url"   onclick="{document.my_media3.play()}">
+<input type=button value="Pause media url"  onclick="{document.my_media3.pause()}">
+<input type=button value="Stop"             onclick="{document.my_media3.stop()}">
+<input type=button value="Release Memory"   onclick="{document.my_media3.release();document.my_media3 = null;}">
+<br><br><br><br>
+
+
+
+
+
+
+<input type=text id="mySrc2" size=70 value="Download/myRecording.mp3"> 
+<input type=button value="create recording myRecording.mp3" onclick="{
+    document.my_media9 = new Media(document.getElementById('mySrc2').value, onSuccess, onError);}">
+<input type=button value="start recording"   onclick="{document.my_media9.startRecord();}">
+<input type=button value="stop recording"    onclick="{document.my_media9.stopRecord();document.my_media9.release();}">
+<input type=button value="play playback"    onclick="{document.my_media9.play();}">
+<input type=button value="stop playback"    onclick="{document.my_media9.stop();}">
+<input type=button value="release recording" onclick="{document.my_media9.release();document.my_media9 = null;}">
+<br><br><br><br>
+
+
+
+
+<input type=button value="create recordingon sdcard root using only  myRecording.mp3" onclick="{
+    document.my_media10 = new Media('myRecording.mp3', onSuccess, onError);}">
+<input type=button value="start recording"   onclick="{document.my_media10.startRecord();}">
+<input type=button value="stop recording"    onclick="{document.my_media10.stopRecord();document.my_media10.release();}">
+<input type=button value="play playback"    onclick="{document.my_media10.play();}">
+<input type=button value="stop playback"    onclick="{document.my_media10.stop();}">
+<input type=button value="release recording" onclick="{document.my_media10.release();document.my_media10 = null;}">
+<br><br><br><br>
+
+
+
+Using phonegap 3.4 things are different than with phonegap 2.0
+
+
+
+<h3 >Phonegap audio has a few quirks on the android system. (At least on a samsung galaxy s3 cell phone and phonegap 2.0.0)<br><br>
+
+
+
+The .release() function does not completely release the object. I have set the object to "null" so that it can't be played again.
+
+On Android systems it seems that      .wav      .m4a (iTunes format)  and .mp3 all play 
+
+You can load an .mp3 from the web, from the android_assets/www folder, from the phones media or Download folders. 
+ <br>
+
+All can be polyphoninc (play at the same time). <br><br>
+
+All do not seem to have the 5 second limit that I kept reading about<br><br>
+
+Button activation time seems a bit slow, Pre-loading by activating .play and the ,pause seems to speed up the buttons..<br><br>
+
+
+
+Recordings must be on the root or Download folder of the sdcard. Note: both relative and absolute calling work for playback<br>
+example Both of these work on playback<br>
+Download/myrecord.mp3 <br>
+/sdcard/Download/myRecord.mp3<br>
+and<br>
+myRecord.mp3
+/sdcard/myRecord.mp3<br>
+
+
+BUT when recording only 
+myrecord.mp3
+Download/myRecord.mp3
+<br>
+work adding the /sdcard makes it not record.
+
+
+
+Generally sound seems to work on Android, but the examples on the phonegap documentation page do not work well!
+<hr>
+
+Using phonegap 3. I have a few different issues.<br><br>
+The record feature seems to work but .release must be activated before .play works.<br><br>
+
+
+
+</h3>
+
+
+
+
+
+<br><input type=button value="index.html" style="font-size:30px" onclick="location='index.html'"><br>
+
+
+
+
+
+
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+
+
+
+
+
+
+
+
+
+    </body>
+</html>

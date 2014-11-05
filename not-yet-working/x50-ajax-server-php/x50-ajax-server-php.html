@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>Simple Ajax Example</title>
+<script language="Javascript">
+
+
+
+
+
+
+function myAjax(myPHP,myToChange) {
+      if (window.XMLHttpRequest) {    // for Mozilla and Safari Browsers
+        myXML = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {      // For IE Browsers
+        myXML = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    myXML.open('POST', myPHP, true);
+    myXML.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    myXML.onreadystatechange = function() {
+        if (myXML.readyState == 4) {
+            document.getElementById(myToChange).innerHTML = myXML.responseText; // writes to the div
+        }
+    }
+    myXML.send();
+}
+
+ 
+
+
+
+
+</script>
+</head>
+
+<body onload="document.myForm.myWord.select()">
+
+
+
+
+<body style="font-size:25px">
+
+AJAX Hello World <br><br>
+
+
+
+
+
+<input type=button value="More Advanced AJAX" style="font-size:30px" onclick="location='advancedAjax.html'"><br><br>
+
+
+
+<form name="myForm">
+    AJAX example<br>
+    Type Something: <input name="myWord" type="text" onKeyUp="myAjax('http://www.yourURL.com/yourFolder/ajax.php','myDiv')">  
+    <div id="myDiv">This is where the php stuff will go</div>
+</form>
+
+
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+
+</body>
+</html>

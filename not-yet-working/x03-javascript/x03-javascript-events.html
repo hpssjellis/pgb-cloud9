@@ -1,0 +1,60 @@
+
+
+<script>
+document.myx = 40
+</script>
+
+
+
+<body onkeyDown= "{
+  alert(String.fromCharCode(event.keyCode))
+  if(string.fromCharCode(event.keyCode)=='A'){
+      getElementById('myOut').style.left = parseInt(getElementById('myOut').style.left) + 10 + 'px'
+  }
+}">
+
+
+
+
+
+<h1 align=center> Basic Javascript Events by ______</h1>
+
+
+Note: Tap the capital "A" to see the object move!
+
+</h3>Instructions</h3>
+Pass: Add to this page several links to websites that have information about javascript events. 
+Good: Add something on this page that activates for every possible javascript event. 
+Note: identify if events only work on touch screen computers.
+
+
+<br>
+
+<div id="myOut" style= "position:absolute;left:500;top:100;">Move me</div>
+
+<br><br>
+
+
+
+<input type=button value="up" onclick="{
+   document.all.myOut.style.top = parseInt(document.all.myOut.style.top)-20+'px' 
+}"><br>
+
+
+
+<input type=button value="left" onclick="{
+   document.all.myOut.style.left = parseInt(document.all.myOut.style.left)-20+'px'
+}">
+
+
+<b onMouseOver = "{
+   getElementById('myOut').innerHTML +=' Move me, '	
+}"> Copy me!</b> <br><br>
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+
+

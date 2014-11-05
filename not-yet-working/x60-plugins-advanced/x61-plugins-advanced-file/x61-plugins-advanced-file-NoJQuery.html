@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FileWriter Example</title>
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+       // alert('Ready to use ')
+    }
+
+
+
+//  ------------------CODE TO WRITE TO A FILE ----------------------------------------
+
+
+    function gotFS(fileSystem) {
+        fileSystem.root.getFile("jerstuff/readme2.txt", {create: true, exclusive: false}, gotFileEntry, fail); // if folder is premade
+       // fileSystem.root.getFile("readme2.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+
+    }
+
+    function gotFileEntry(fileEntry) {
+        fileEntry.createWriter(gotFileWriter, fail);
+    }
+
+    function gotFileWriter(writer) {
+        
+        writer.seek(writer.length);   // This will make the new data write to the end of the file. Delete this line to have file write from the start
+        writer.write(document.getElementById('myArea').value);
+                   
+        writer.onwriteend = function(evt) { 
+             document.getElementById('myInfoDiv').innerHTML = 'Writen to file = ' + document.getElementById('myArea').value;
+             document.getElementById('myArea').value = "";  // clear the textarea after saving
+        }
+
+
+    }
+
+    
+    
+    
+  
+
+
+
+
+
+
+// ---------------------------- CODE TO READ FROM A FILE ---------------------------
+
+
+
+      function gotFsRead(fileSystem) {
+        fileSystem.root.getFile("jerstuff/readme2.txt", null, gotFileToRead, fail);   // if folder is premade.
+       // fileSystem.root.getFile("readme2.txt", null, gotFileToRead, fail);  
+    }
+
+
+
+    function gotFileToRead(fileEntry) {
+        fileEntry.file(gotFile, fail);
+    }
+
+    function gotFile(file){
+        readAsText(file);
+    }
+
+
+    function readAsText(file) {
+        var reader = new FileReader();
+        
+        reader.readAsText(file);
+        
+        reader.onloadend = function(evt) {
+            document.getElementById('myInfoDiv').innerHTML = 'Read as Text '+ evt.target.result;
+            document.getElementById('myArea').value = evt.target.result;
+        };
+
+    }
+    
+    
+    
+ 
+    function fail(error) {
+      document.getElementById('myInfoDiv').innerHTML = 'Error code = '+error.code;
+    
+    }
+       
+  
+    
+
+</script>
+</head>
+<body>
+<h1>pgb-helloworld-file</h1>
+    
+    
+<div id="myInfoDiv">File Info Here</div>
+    
+<textarea id="myArea" rows="10" cols="70" wrap>This information saved to file</textarea>
+    
+<input type=button value="write Textarea to file" style="font-size:30px" onclick="{
+
+   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+
+}"> <br>
+    
+    
+<input type=button value="read from file to textarea" style="font-size:30px" onclick="{
+
+   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFsRead, fail);
+
+}"> 
+       
+ 
+    
+    
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+
+    
+  </body>
+</html>

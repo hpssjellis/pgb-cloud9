@@ -1,0 +1,48 @@
+<h1>Instructions</h1>
+Write a spy program that encrypts a message and then decrypts it.<br>
+
+
+
+
+<textarea rows=6 cols=70 id=myAreaIn>A happy puppy</textarea>
+
+
+
+
+<br><input type=button value=Encrypt onClick="{
+   myTemp=''   
+   document.all.myAreaOut.value=''
+   for(myCount=0; myCount<document.all.myAreaIn.value.length; myCount++){
+	if(document.all.myAreaIn.value[myCount] =='y'){document.all.myAreaOut.value += 'a'}
+	
+	
+   
+   
+   }
+}">
+
+<br>
+<textarea rows=6 cols=70 id=myAreaOut>Encrypted goes here</textarea>
+
+
+<br><input type=button value=Decrypt  onClick="{
+   myTemp=''
+   document.all.myProof.value=''
+   for(myCount=0; myCount<document.all.myAreaOut.value.length; myCount++){
+	if(document.all.myAreaOut.value[myCount] =='a'){document.all.myProof.value += 'y'}
+
+
+   }
+}">
+
+<br><textarea rows=6 cols=70 id=myProof>Decrypted goes here</textarea>
+
+
+
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>

@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+
+<script>
+function myPauseAll(){
+   document.getElementById('myAudio1').pause() 
+   document.getElementById('myAudio2').pause() 
+   document.getElementById('myAudio3').pause() 
+   
+   
+}   
+   
+   
+   
+</script>
+
+
+
+<input type=button value="Click here for Advanced Polyphonic, local app sounds" style="font-size:15px;background-color:red;" onclick="{
+  location ='x64-plugins-advanced-sound-poly.html'
+}">
+
+
+<br>
+<hr>
+<br>
+Load a url using an HTML5 audio tag.  http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3<br>
+
+<audio id="myAudio1" src="http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3"></audio>
+
+<input type=button value="load" style="font-size:25px;" onclick="{
+   document.getElementById('myAudio1').play()
+   document.getElementById('myAudio1').pause()
+}">
+<input type=button value="play" style="font-size:25px;" onclick="{
+   myPauseAll()
+   document.getElementById('myAudio1').play()
+}">
+
+<input type=button value="pause" style="font-size:25px;" onclick="{
+   document.getElementById('myAudio1').pause()
+}"><br>
+
+<input type=button value="stop" style="font-size:25px;" onclick="{
+   document.getElementById('myAudio1').pause()
+   document.getElementById('myAudio1').currentTime = 0;
+}"><br>
+
+
+<input type=button value="forward 5s" style="font-size:25px;" onclick="{
+   document.getElementById('myAudio1').currentTime += 5.0;
+}">
+
+
+<input type=button value="back 5s" style="font-size:25px;" onclick="{
+   document.getElementById('myAudio1').currentTime -= 5.0;
+}">
+
+
+
+
+
+
+<br><br>
+
+
+
+
+Load another url http://yourwebsite/yourfolder/test.mp3<br>
+
+<audio id="myAudio2" src="http://yourwebsite/yourfolder/test.mp3"></audio>
+
+<input type=button value="load" style="font-size:25px;" onclick="{
+   document.getElementById('myAudio2').play()
+   document.getElementById('myAudio2').pause()
+}">
+
+<input type=button value="play" style="font-size:25px;" onclick="{
+   myPauseAll()
+   document.getElementById('myAudio2').play()
+}">
+
+<input type=button value="pause" style="font-size:25px;" onclick="{
+   document.getElementById('myAudio2').pause()
+}">
+
+<input type=button value="stop" style="font-size:25px;" onclick="{
+   document.getElementById('myAudio2').pause()
+   document.getElementById('myAudio2').currentTime = 0;
+}">
+
+<br><br>
+
+
+
+
+
+
+
+Load from any internet location or sdcard location. Try different file formats to see what works on your phone<br>
+
+
+<input type=text value="http://yourwebsite/yourfolder/test.mp3" id="myText1" style="font-size:25px;">
+<audio id="myAudio3" src="http://yourwebsite/yourfolder/test.mp3"></audio>
+
+<input type=button value="load" style="font-size:25px;" onclick="{
+   document.getElementById('myAudio3').src =    document.getElementById('myText1').value
+   document.getElementById('myAudio3').play()
+   document.getElementById('myAudio3').pause()
+}">
+
+<input type=button value="play" style="font-size:25px;" onclick="{
+   myPauseAll()
+   document.getElementById('myAudio3').play()
+}">
+
+<input type=button value="pause" style="font-size:25px;" onclick="{
+   document.getElementById('myAudio3').pause()
+}">
+
+<input type=button value="stop" style="font-size:25px;" onclick="{
+   document.getElementById('myAudio3').pause()
+   document.getElementById('myAudio3').currentTime = 0;
+}">
+<br><br>
+
+
+
+
+
+
+
+<br><br>
+
+
+
+
+ from your phones sdcard at the location /sdcard/myRecording.mp3. Note: a sound file must be at that location.<br>
+
+<audio id="myAudio4" src="/sdcard/myRecording.mp3"></audio>
+
+<input type=button value="load" style="font-size:25px;" onclick="{
+   document.getElementById('myAudio4').play()
+   document.getElementById('myAudio4').pause()
+}">
+
+<input type=button value="play" style="font-size:25px;" onclick="{
+   myPauseAll()
+   document.getElementById('myAudio4').play()
+}">
+
+<input type=button value="pause" style="font-size:25px;" onclick="{
+   document.getElementById('myAudio4').pause()
+}">
+
+<input type=button value="stop" style="font-size:25px;" onclick="{
+   document.getElementById('myAudio4').pause()
+   document.getElementById('myAudio4').currentTime = 0;
+}">
+
+<br><br>
+
+
+
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+
+
+

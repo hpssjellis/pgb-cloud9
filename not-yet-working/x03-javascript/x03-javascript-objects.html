@@ -1,0 +1,46 @@
+
+<script>
+function myStudent(myAge, myName, myImg){
+   this.myStudentAge = myAge
+   this.myStudentName = myName
+   this.myStudentImage = myImg
+   this.myInfo = mystudentInfo
+}
+
+function mystudentInfo(){
+   document.getElementById('my1').innerHTML += ' My name is ' +
+   this.myStudentName + ' I am ' + this.myStudentAge +
+   ' years old. Here is my picture <img width=70 src ='+this.myStudentImage+'><br>'
+}
+</script>
+
+<input type=button value="set Fred" onClick="{
+   Fred=new myStudent('17','Fred','http://www.clker.com/cliparts/r/6/N/B/r/E/blue-stick-man-hi.png')
+   Fred.myInfo()
+}">
+
+<input type=button value="set Mary" onClick="{
+   Mary=new myStudent('19','Mary','http://www.clker.com/cliparts/D/u/J/o/g/v/light-pink-stick-man-hi.png')
+   Mary.myInfo()
+}">
+
+<input type=button value="set and show database" onClick="{
+   myClass = new Array()
+   myClass[0] = new myStudent('17','Fred','http://www.clker.com/cliparts/r/6/N/B/r/E/blue-stick-man-hi.png')
+   myClass[1] = new myStudent('19','Mary','http://www.clker.com/cliparts/D/u/J/o/g/v/light-pink-stick-man-hi.png')
+
+   for (myLoop=0; myLoop < myClass.length; myLoop++){
+      myClass[myLoop].myInfo()
+   }
+}">
+
+<div id="my1">results go here</div> 
+
+
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>

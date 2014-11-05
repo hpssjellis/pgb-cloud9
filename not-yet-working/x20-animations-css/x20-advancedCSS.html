@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+
+#myDiv1 {   
+  width:100px;
+  height:100px;
+  background:red;
+  position:relative;
+
+}
+
+
+
+
+.myAni {   
+-webkit-animation-name: myFirst;
+-webkit-animation-duration:3s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-timing-function: ease;
+-webkit-animation-fill-mode: forwards;
+}
+
+
+
+
+
+@-webkit-keyframes myFirst {     
+  0%   {background:red;   left:0px; top:0px;}
+  25%  {background:yellow; left:200px; top:0px; opacity: 0.3;}
+  50%  {background:blue;  left:200px; top:200px; -webkit-transform: scale(2.1) rotate(50deg); }
+  75%  {background:green;  left:0px; top:200px;}
+  100% {background:red;    left:0px; top:0px; }
+
+
+
+}
+
+</style>
+
+
+
+
+
+</head>
+<body>
+
+<p><b>Note:</b> This CSS animations example has been optimized for Phonegap and does not include the standard 
+
+format for non-chrome or safari browsers</p>
+
+
+<div id="myDiv1"><img src="myPic1.png" width=40></div>
+
+
+<input id="myGoButton" type=button value= go onclick="{
+
+   if (document.getElementById('myGoButton').value =='go') {
+       document.getElementById('myDiv1').className ='myAni';
+       setTimeout(function() {
+           document.getElementById('myDiv1').className ='myAniNot';
+           document.getElementById('myGoButton').value= 'go'
+       }, 3000);
+       document.getElementById('myGoButton').value= 'running'
+   }
+}">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+
+</body>
+</html>

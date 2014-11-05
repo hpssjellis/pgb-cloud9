@@ -1,0 +1,41 @@
+<!DOCTYPE html>  
+<html>  
+  <head>  
+    <title>SVG SMIL Animate with transform</title>  
+  </head>  
+  <body>  
+    <svg width="200px" height="200px" xmlns="http://www.w3.org/2000/svg">  
+      <rect x="0" y="0" width="300" height="200" fill="yellow" stroke="black" stroke-width="1" />  
+      <circle cx="100" cy="100" r="1" fill="red"/>
+      <rect x="0" y="100" width="10" height="30" fill="blue" stroke="black" stroke-width="1" transform="rotation">  
+	<desc> Rectangle that is sort of homing in.
+	Rotate from 0 to 360 degrees, with a rotation center (tiny red dot) of x=100 and y=100.
+	At the same time we move the x and y position of the rectangle. This creates some sort of spiral.
+	</desc>
+	<animateTransform  
+	    attributeName="transform"  
+	    begin="2s"  
+	    dur="5s"  
+	    type="rotate"  
+	    from="0 100 100"  
+	    to="360 100 100"  
+	    repeatCount="indefinite"   
+	    />  
+	<animate attributeName="x" attributeType="XML" 
+		 begin="2s" dur="20s" from="0" to="95" fill="freeze"/>
+	<animate attributeName="y" attributeType="XML" 
+		 begin="2s" dur="20s" from="100" to="85" fill="freeze"/>
+      </rect>  
+    </svg>  
+    
+    
+    
+    
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+
+  </body>  
+</html>

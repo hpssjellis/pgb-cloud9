@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+        alert('Camera device ready to use');
+    }
+  
+
+    // onSuccess: Get a snapshot of the current acceleration
+    //
+    
+    
+    
+        function onURISuccess(imageURI) {
+     alert('photo URI success')   
+   document.getElementById('myImage1').src = imageURI;
+
+      
+    }
+
+    // onError: Failed to get the acceleration
+    //
+    function onCameraError(message) {
+        alert('Failed because: ' + message)
+    }
+    
+    
+    
+    function onDataSuccess(imageData) {
+     alert('photo data success')   
+     document.getElementById('myImage2').src =  "data:image/jpeg;base64," + imageData;
+    // var image = document.getElementById('myImage1');
+    // image.src = imageURI;
+
+      
+    }
+
+
+    
+
+
+
+</script>
+</head>
+<body>
+<font style="font-size:30px">  
+
+<h3>Using the Camera with Phonegap Build</h3>
+
+Image URI:<img  id="myImage1"   style="display:block; width:300px; height:200px;" src="" /><br>
+Image Data:<img  id="myImage2"   style="display:block; width:500px; height:400px;" src="" /><br>
+
+   
+
+<input type=button value="Picture as URI" style="font-size:30px" onclick="{
+
+        navigator.camera.getPicture(onURISuccess, onCameraError, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+  
+}">
+
+
+
+   
+
+<input type=button value="Picture As Data" style="font-size:30px" onclick="{
+
+       navigator.camera.getPicture(onDataSuccess, onCameraError, { quality: 50, allowEdit: true, destinationType: Camera.DestinationType.DATA_URL});
+ 
+  
+}">
+
+ 
+
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+   
+       
+</font>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

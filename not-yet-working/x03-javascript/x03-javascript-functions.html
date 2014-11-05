@@ -1,0 +1,103 @@
+
+<div id="myDiv1"> Click the buttons </div>
+
+
+<input id="myC" type=button value="Inline Function" onClick="{
+   document.getElementById('myDiv1').innerHTML= 'Click 1 works'
+}"> <br>
+
+
+
+
+<input type=button value="Calling an Inline Function" onClick="{
+   document.getElementById('myC').click()
+}"><br>
+
+
+
+<script>
+function myClick3(){
+   document.getElementById('myDiv1').innerHTML= 'This click works'
+}
+</script> <br>
+
+
+
+<input type=button value="Calling a Normal Function" onClick="{myClick3()
+}"> <br>
+
+
+
+<input type=button value="jQuery Style Inline Function" onClick="{
+   (function (){
+      document.getElementById('myDiv1').innerHTML= 'jQuery style functions work'
+   })()
+}">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Advanced functions - passing information<br>
+
+<script>
+
+function myPass(myWord){
+  document.getElementById('myDiv1').innerHTML = 'You Passed the word '+myWord
+
+}
+
+
+
+document.showWord = function(myWord) {
+     document.getElementById('myDiv1').innerHTML= 'You Passed the word '+myWord + ' jQuery style'
+}
+
+
+</script>
+
+
+
+<input type=button value="Passing info" onClick="{
+  myPass('fred')
+}"><br>
+
+
+
+<input type=button value="jQuery Passing info" onClick="{
+  document.showWord('Mary')
+}"><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>

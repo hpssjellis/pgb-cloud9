@@ -1,0 +1,78 @@
+<h1 align = center> 2D Arrays by ________</h1>
+
+<h3>Instructions</h3>
+this is a really inefficient 2D array.<br>
+Pass: Use "for" loops to make it more efficient. <br>Good: allow the user to enter new values using textboxes.
+
+
+
+<div id = "myDiv1">results go here</div>
+
+<input type=button value="Set Class" onclick="{
+
+     document.myClass = new Array()
+                                              
+                                              
+     document.myClass[1] = new Array()
+     document.myClass[1][1] = 'Fred'
+     document.myClass[1][2] = 'Brown hair'
+     document.myClass[1][3] = 'Green eyes'
+                                              
+     document.myClass[2] = new Array()
+     document.myClass[2][1] = 'Tom'
+     document.myClass[2][2] = 'Blond hair'
+     document.myClass[2][3] = 'Brown eyes'
+                                              
+     document.myClass[3] = new Array()
+     document.myClass[3][1] = 'Peter'
+     document.myClass[3][2] = 'Red hair'
+      document.myClass[3][3] = 'Blue eyes'  
+      
+     Alert('Fixed values have been set')                                         
+                                              
+  }">
+
+<input type=button value='print' onclick="{
+
+      myTemp=''
+      myTemp += document.myClass[1][1] +', '
+      myTemp += document.myClass[2][1] +', '
+      myTemp += document.myClass[3][1] +', '  
+      myTemp += document.myClass[3][2] +', '
+                                          
+      alert('very inefficient function to show some of the array values.')                                    
+                                          
+      document.getElementById('myDiv1').innerHTML = myTemp
+  }">
+
+
+
+
+
+
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

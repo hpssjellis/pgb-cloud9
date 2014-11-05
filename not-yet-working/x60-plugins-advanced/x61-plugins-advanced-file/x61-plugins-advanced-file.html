@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FileWriter Example</title>
+
+<script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+       // alert('Ready to use ')
+    }
+
+
+
+//  ------------------CODE TO WRITE TO A FILE ----------------------------------------
+
+
+function myFileWriteText(){
+    // use "myFolder/readme2.txt" for a subfolder on your android phone sdcard
+   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, 
+       function(fileSystem){
+         fileSystem.root.getFile("readme2.txt", {create: true, exclusive: false}, 
+              function(fileEntry){
+                  fileEntry.createWriter(
+                      function(writer){
+                          // your code goes here
+                          
+                          writer.write(document.getElementById('myArea').value);
+                   
+                          writer.onwriteend = function(evt) { 
+                               document.getElementById('myInfoDiv').innerHTML = 'Writen to file = ' + document.getElementById('myArea').value;
+                               document.getElementById('myArea').value = "";  // clear the textarea after saving
+                          }                        
+
+
+                           
+                          // your code stops here
+                      }
+                      , fail);
+             }
+             , fail); 
+      }
+      , fail); 
+}     // End nasty myFileWriteText function
+
+
+//  ------------------CODE TO Append TO A FILE ----------------------------------------
+
+function myFileAppendText(){
+   // use "myFolder/readme2.txt" for a subfolder on your android phone sdcard
+   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, 
+       function(fileSystem){
+         fileSystem.root.getFile("readme2.txt", {create: true, exclusive: false}, 
+              function(fileEntry){
+                  fileEntry.createWriter(
+                      function(writer){
+                          // your code goes here
+                          
+                          writer.seek(writer.length);   // This will make the new data write to the end of the file. Delete this line to have file write from the start
+                          writer.write(document.getElementById('myArea').value);
+                   
+                          writer.onwriteend = function(evt) { 
+                               document.getElementById('myInfoDiv').innerHTML = 'Writen to file = ' + document.getElementById('myArea').value;
+                               document.getElementById('myArea').value = "";  // clear the textarea after saving
+                          }                        
+
+
+                           
+                          // your code stops here
+                      }
+                      , fail);
+             }
+             , fail); 
+      }
+      , fail); 
+}     
+
+
+
+
+
+
+
+
+//  ------------------CODE TO READ FROM A FILE ----------------------------------------
+
+
+
+function myFileReadText(){
+   // use "myFolder/readme2.txt" for a subfolder on your android phone sdcard
+   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, 
+       function(fileSystem){
+         fileSystem.root.getFile("readme2.txt", null, 
+              function(fileEntry){
+                  fileEntry.file(
+                      function(file){
+                          // your code goes here
+                          var reader = new FileReader();
+        
+                          reader.readAsText(file);
+        
+                          reader.onloadend = function(evt) {
+                             document.getElementById('myInfoDiv').innerHTML = 'Read as Text '+ evt.target.result;
+                             document.getElementById('myArea').value = evt.target.result;
+                          };
+
+                          // your code stops here
+                      }
+                      , fail);
+             }
+             , fail); 
+      }
+      , fail); 
+}    
+
+
+    
+function fail(error) {
+   document.getElementById('myInfoDiv').innerHTML = 'Error code = '+error.code;
+}
+       
+  
+    
+
+</script>
+</head>
+<body>
+<h1>pgb-helloworld-file</h1>
+    
+    
+<div id="myInfoDiv">File Info Here</div>
+    
+<textarea id="myArea" rows="10" cols="70" wrap>This information saved to file</textarea><br>
+
+
+<input type=button value="Write Textarea to file" style="font-size:25px" onclick="{
+   myFileWriteText();
+}"> <br>
+
+
+
+    
+<input type=button value="Append Textarea to file" style="font-size:25px" onclick="{
+   myFileAppendText();
+}"> <br>
+
+
+    
+    
+<input type=button value="Read from file to textarea" style="font-size:25px" onclick="{
+    myFileReadText();
+}"> <br>
+       
+ 
+  
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+  
+    
+    
+  </body>
+</html>

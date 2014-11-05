@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>j-jsc3d-View-pgb-helloworld</title>
+</head>
+<body>
+    
+    
+
+<script type="text/javascript" src="jsc3d/jsc3d.js"></script>
+<script type="text/javascript" src="jsc3d/jsc3d.touch.js"></script> 
+
+
+     
+First lets load an object file saved from a simple Blender File.<br>
+The object file actually loads 2 files, a .obj file and a .mtl<br>
+This is the only one I could load that brought colours over from blender
+
+        
+<canvas id="cv" width=400 height=300>
+</canvas>
+  
+<script type="text/javascript">
+  var viewer = new JSC3D.Viewer(document.getElementById('cv'));
+  viewer.setParameter('SceneUrl',         'blenderExportwavefrontObjC.obj');
+  viewer.setParameter('ModelColor',       '#CAA618');
+  viewer.setParameter('BackgroundColor1', '#E5D7BA');
+  viewer.setParameter('BackgroundColor2', '#383840');
+  viewer.setParameter('RenderMode',       'flat');
+  viewer.init();
+  viewer.update();
+</script>
+        
+        
+        
+<br><br><br>Now lets try to load the same Blender object ssaved as a .stl 3d printer file<br>
+Notice here that the colours were defined by this App.
+<br><br>
+                        
+<canvas id="cv2" width=400 height=300>
+   It seems you are using an outdated browser that does not support canvas :-(
+</canvas>
+  
+<script type="text/javascript">
+   var viewer2 = new JSC3D.Viewer(document.getElementById('cv2'));
+   viewer2.setParameter('SceneUrl',         'blenderExportStl.stl');
+   viewer2.setParameter('ModelColor',       '#CAA618');
+   viewer2.setParameter('BackgroundColor1', '#E5D7BA');
+   viewer2.setParameter('BackgroundColor2', '#383840');
+   viewer2.setParameter('RenderMode',       'flat');
+   viewer2.init();
+   viewer2.update();
+</script>
+        
+        
+
+
+        
+        
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+        
+        
+</body>
+</html>

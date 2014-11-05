@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript" charset="utf-8" src="../phonegap.js">
+   // strangely this line is very important for plugins
+</script>
+
+
+
+</head>
+<body>
+<h1 align=center>Plugin testing using jQuery style functions</h1>
+<font style="font-size:30px">  
+
+ 
+<input type=button value="Device Info" style="font-size:30px" onclick="{
+
+
+      alert('Device Model: '    + device.model    + '\n' +
+                            'Device Cordova: '  + device.cordova  + '\n' +
+                            'Device Platform: ' + device.platform + '\n' +
+                            'Device UUID: '     + device.uuid     + '\n' +
+                            'Device Version: '  + device.version  + '\n')
+}">
+   
+
+
+<input type=text id="mySrc" value="http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3">
+<input type=button value="Try loading a song" style="font-size:30px" onclick="{
+
+   my_media = new Media(document.getElementById('mySrc').value, 
+   
+      function () {
+         alert('Media plugin success')   
+      }, 
+      
+      function (error) {
+         alert('Error code: '    + error.code );
+      }
+      
+      );
+            
+      my_media.play();
+
+}">
+
+<input type=button value="Stop" style="font-size:30px" onclick="{
+   
+    my_media.stop();
+
+}">
+
+
+
+
+
+
+<h2> Test if the camera plugin is working</h2>
+Image Data:<img  id="myImage2"   style="display:block; width:500px; height:400px;" src="" /><br>
+
+   
+
+<input type=button value="Picture As Data" style="font-size:30px" onclick="{
+
+  navigator.camera.getPicture(    
+     function (imageData) {
+         alert('photo data success')   
+         document.getElementById('myImage2').src =  'data:image/jpeg;base64,' + imageData;
+     }, 
+     function (message) {
+        alert('Failed because: ' + message)
+     }, 
+     { quality: 50, allowEdit: true, destinationType: Camera.DestinationType.DATA_URL});
+ 
+  
+}">
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+       
+</font>
+</body>
+</html>

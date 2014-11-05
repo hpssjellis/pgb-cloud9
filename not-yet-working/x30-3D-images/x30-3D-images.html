@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>j-3d-view-basic-jsc3d-pgb-helloworld</title>
+    </head>
+    <body>
+
+        Wait a minute. The .stl 3d printing file should load...
+        <script type="text/javascript" src="http://jsc3d.googlecode.com/svn/trunk/jsc3d/jsc3d.js"></script>
+        <script type="text/javascript" src="http://jsc3d.googlecode.com/svn/trunk/jsc3d/jsc3d.touch.js"></script>
+     
+     
+
+                        
+                        
+        <canvas id="cv2" width=400 height=300>
+        It seems you are using an outdated browser that does not support canvas :-(
+        </canvas>
+  
+  
+  
+        <script type="text/javascript">
+            var viewer2 = new JSC3D.Viewer(document.getElementById('cv2'));
+            viewer2.setParameter('SceneUrl',         'RugbyLineoutMaulYellow05.stl');
+            viewer2.setParameter('ModelColor',       '#CAA618');
+            viewer2.setParameter('BackgroundColor1', '#E5D7BA');
+            viewer2.setParameter('BackgroundColor2', '#383840');
+            viewer2.setParameter('RenderMode',       'flat');
+            viewer2.init();
+            viewer2.update();
+        </script>
+        
+        
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+        
+    </body>
+</html>

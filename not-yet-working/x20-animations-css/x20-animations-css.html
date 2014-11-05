@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+
+#myDiv {
+  width:100px;
+  height:100px;
+  background:red;
+  position:relative;
+  -webkit-animation:myfirst 3s linear 1s infinite alternate;
+}
+
+@-webkit-keyframes myfirst {
+  0%   {background:red; left:0px; top:0px;}
+  25%  {background:yellow; left:200px; top:0px;}
+  50%  {background:blue; left:200px; top:200px;}
+  75%  {background:green; left:0px; top:200px;}
+  100% {background:red; left:0px; top:0px;}
+
+
+
+}
+
+</style>
+</head>
+<body>
+
+
+<input type=button value="Button activated CSS" style="font-size:15px;background-color:red;" onclick="{
+  location ='x20-advancedCSS.html'
+}">
+
+<p><b>Note:</b> This CSS animations example has been optimized for Phonegap as does not include the standard 
+
+format for non-chrome or safari browsers</p>
+
+
+<div id="myDiv"></div>
+
+
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+
+
+</body>
+</html>

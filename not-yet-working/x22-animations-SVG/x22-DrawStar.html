@@ -1,0 +1,31 @@
+<svg id="mySvgTag" width="300" height="200" style="position:absolute;left:25px;top:25px;" >
+
+    
+  <polygon points="100,10 40,180 190,60 10,60 160,180" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+</svg>
+
+
+<input type=button value="javascript access" onclick="{
+  var mySVG = document.getElementById('mySvgTag');
+  alert('The objects x value is ' + mySVG.style.left )
+}">
+
+<input type=button value="Go Left" onclick="{
+  var mySVG = document.getElementById('mySvgTag');
+  mySVG.style.left = parseInt(mySVG.style.left)+50+'px';
+}">
+
+
+</svg>
+
+
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+
+
+

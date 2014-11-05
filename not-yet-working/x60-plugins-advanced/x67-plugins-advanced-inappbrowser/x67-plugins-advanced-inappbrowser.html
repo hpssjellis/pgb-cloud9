@@ -1,0 +1,109 @@
+    <script type="text/javascript" src="../phonegap.js"></script>
+
+
+<font style="font-size:30px"><br>
+<br>
+<h2>inappbrowser-pgb-helloworld</h2>
+<br>
+
+
+
+Testing using phonegap to open the chrome browser instead of the phonegap internal browser.<br>
+
+
+
+
+
+<a href="http://www.rocksetta.com"> link to my config.xml allowed site</a><br><br>
+<a href="http://www.google.ca"> link to google</a><br><br>
+
+
+
+
+
+<input type=button value="Allowed site in config.xml using _blank" style="font-size:30px" onclick="{
+
+    window.open('http://www.rocksetta.com','_blank');
+
+}"><br>
+
+
+
+
+<input type=button value="Allowed site in config.xml using _self" style="font-size:30px" onclick="{
+
+    window.open('http://www.rocksetta.com','_self');
+
+}"><br>
+
+
+
+
+<input type=button value="Allowed site in config.xml using _system" style="font-size:30px" onclick="{
+
+    window.open('http://www.rocksetta.com','_system');
+
+}"><br><hr>
+
+
+
+
+
+
+<input type=button value="Google  location no" style="font-size:30px" onclick="{
+
+   window.open('http://www.google.com','location=no');
+
+}"><br>
+
+
+
+<input type=button value="Google location=yes" style="font-size:30px" onclick="{
+
+   window.open('http://www.google.com','location=yes');
+
+}"><br><hr>
+
+
+
+
+
+
+
+
+<input type=button value="Google _blank" style="font-size:30px" onclick="{
+
+    window.open('http://www.google.com','_blank');
+
+}"><br>
+
+
+
+
+<input type=button value="Google _self" style="font-size:30px" onclick="{
+
+    window.open('http://www.google.com','_self');
+
+}"><br>
+
+
+
+
+<input type=button value="Google _system" style="font-size:30px" onclick="{
+
+    window.open('http://www.google.com','_system');
+
+}"><br><hr>
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+
+
+
+</font>
+
+

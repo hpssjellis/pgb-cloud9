@@ -1,0 +1,109 @@
+!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+     alert('devices ready to use');
+      var options = { frequency: 1000 }; // if 1000 update every second
+       watchID = navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, options);
+       
+    }
+    
+  
+
+    // onSuccess: Get a snapshot of the current acceleration
+    //
+    function onAccelSuccess(acceleration) {
+        
+       document.getElementById('myAccelData').innerHTML = 'Acceleration X: ' + acceleration.x + '<br>' +
+              'Acceleration Y: ' + acceleration.y + '<br>' +
+              'Acceleration Z: ' + acceleration.z + '<br>' +
+              'Timestamp: '      + acceleration.timestamp + '<br>';
+    }
+
+    // onError: Failed to get the acceleration
+    //
+    function onAccelError() {
+        alert('onError!');
+    }
+    
+
+    function stopAccelWatch() {
+            if (watchID) {
+                navigator.accelerometer.clearWatch(watchID);
+                watchID = null;
+            }
+        } 
+
+
+</script>
+</head>
+<body>
+<font style="font-size:20px">  
+
+<h3>Acceleration and Device Information Hello World</h3>
+
+<div id="myAccelData" > Acceleration stuff should go here </div>
+
+
+ 
+<input type=button value="Device Info" style="font-size:20px" onclick="{
+
+      stopAccelWatch();
+      document.getElementById('myAccelData').innerHTML=
+                            'Device Model: '    + device.model    + '<br>' +
+                            'Device Cordova: '  + device.cordova  + '<br>' +
+                            'Device Platform: ' + device.platform + '<br>' +
+                            'Device UUID: '     + device.uuid     + '<br>' +
+                            'Device Version: '  + device.version  + '<br>'
+}">
+   
+   
+
+<input type=button value="Accelerator Stop" style="font-size:20px" onclick="{
+  
+    stopAccelWatch();
+    
+}">
+
+<input type=button value="Accelerator Start" style="font-size:20px" onclick="{
+
+   var options = { frequency: 1000 }; // if 1000 update every second 
+   watchID = navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, options);   
+    
+}"><br>
+
+     
+    
+   
+<input type=button value="Advanced" style="font-size:20px" onclick="{
+
+location = 'index.html' 
+}">
+
+     
+    
+    <script>
+function goBack() {
+    window.history.back()
+}
+</script>
+
+
+
+
+At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}">
+<br><br>
+    
+       
+</font>
+</body>
+</html>

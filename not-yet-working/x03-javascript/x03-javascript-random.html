@@ -1,0 +1,44 @@
+
+<h1 align=center>Javascript Random by ________</h1>
+
+<h3>Instructions</h3>
+Make the web page say many happy random statements<br><br><br>
+
+
+
+
+
+<div id="myDiv1">Results go here</div>
+
+
+
+<input type=button value="random" onclick="{     
+   document.getElementById('myDiv1').innerHTML=Math.round(Math.random()*10)
+}">
+
+
+
+
+<input type=button value="Random Array" onclick="{
+   var myHappy = new Array;
+   myHappy[0]='Looking Good!';
+   myHappy[1]='Have a great day!';
+   
+   myRandNumber = Math.floor(Math.random()*myHappy.length)
+   alert('Your random number is '+myRandNumber)   //delete this line when it is working well
+   document.getElementById('myDiv1').innerHTML = myHappy[myRandNumber]
+
+}">
+
+
+
+
+
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+

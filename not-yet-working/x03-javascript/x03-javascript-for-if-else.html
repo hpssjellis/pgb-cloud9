@@ -1,0 +1,30 @@
+
+<b> Instructions</b> <br>
+Use this for loop to improve the output. <br>
+
+Enter your age:
+<input type=text id="myIn" value=20>
+
+<input type=button value="Solve" onClick="{
+myTemp=''
+
+for (myLoop=1; myLoop <= document.all.myIn.value; myLoop++){
+     myTemp+='<br> At age '+myLoop
+     if(myLoop == 1){myTemp += ' You were a baby'}	
+}
+
+
+getElementById('myOut').innerHTML = myTemp
+}">
+
+<div id="myOut"> Output Here </div>
+
+
+
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>

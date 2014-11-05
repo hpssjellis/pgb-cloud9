@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+  window.onload = function initialLoad() {
+    updateOrientation();
+}
+
+function updateOrientation(){
+    var contentType = "show_";
+    switch(window.orientation){
+        case 0:
+	contentType += "normal";
+	break;
+
+	case -90:
+	contentType += "right";
+	break;
+
+	case 90:
+	contentType += "left";
+	break;
+
+	case 180:
+	contentType += "flipped";
+	break;
+    }
+    document.getElementById("page_wrapper").setAttribute("class", contentType);
+}
+    </script>
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+    // alert('devices ready to use');
+      var options = { frequency: 40 }; // if 1000 update every second
+       watchID = navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, options);
+       
+    }
+    
+  
+
+    // onSuccess: Get a snapshot of the current acceleration
+    //
+    function onAccelSuccess(acceleration) {
+
+
+        document.getElementById('myDiv1').style.left = parseInt(document.getElementById('myDiv1').style.left)+(-1*acceleration.x*4) + 'px' 
+        document.getElementById('myDiv1').style.top = parseInt(document.getElementById('myDiv1').style.top)+ (acceleration.y*4) + 'px' 
+    
+    
+       // Keep on the screen
+       
+       var myRight = window.innerWidth - parseInt(document.getElementById('myDiv1').style.width);
+       var myDown =  window.innerHeight - parseInt(document.getElementById('myDiv1').style.height);
+    
+       if (parseInt(document.getElementById('myDiv1').style.left) < 0){document.getElementById('myDiv1').style.left = '0px'}
+       if (parseInt(document.getElementById('myDiv1').style.left) >  myRight ){document.getElementById('myDiv1').style.left = myRight + 'px'}
+       if (parseInt(document.getElementById('myDiv1').style.top) < 0 ){document.getElementById('myDiv1').style.top = '0px'}
+       if (parseInt(document.getElementById('myDiv1').style.top) > myDown ){document.getElementById('myDiv1').style.top = myDown + 'px'}
+    }
+
+    // onError: Failed to get the acceleration
+    //
+    function onAccelError() {
+        alert('onError!');
+    }
+    
+
+    function stopAccelWatch() {
+            if (watchID) {
+                navigator.accelerometer.clearWatch(watchID);
+                watchID = null;
+            }
+        } 
+
+
+</script>
+</head>
+<body>
+  
+  
+<font style="font-size:20px">  
+
+<h3>Acceleration and Device Information Hello World</h3>
+You should tilt the screen and see if the button moves
+
+
+
+ 
+
+ 
+    
+<div id="myDiv1" style="position:absolute; width:150px; height:30px; left:200px; top:200px">
+    
+   
+<input type=button value="Info Page" style="font-size:20px" ontouchstart="{
+ location = 'x02-easier.html'
+}">
+</div>
+
+
+
+ 
+  <script>
+function goBack() {
+    window.history.back()
+}
+</script>
+
+
+
+
+At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}">
+<br><br>
+    
+    
+       
+</font>
+
+</body>
+</html>

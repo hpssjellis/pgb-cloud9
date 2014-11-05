@@ -1,0 +1,88 @@
+<textarea id="myArea" rows=4 cols=70>
+This is a string. </textarea>
+
+<div id="myOut"> converted string here </div>
+<input type= button value="Uppercase" onClick="{
+   document.getElementById('myOut').innerHTML= document.getElementById('myArea').value.toUpperCase()
+}">
+
+
+
+
+<input type= button value="LowerCase" onClick="{
+   document.getElementById('myOut').innerHTML= document.getElementById('myArea').value.toLowerCase()
+}">
+
+
+
+<input type= button value="Length" onClick="{
+   document.getElementById('myOut').innerHTML= document.getElementById('myArea').value.length
+}">
+
+
+
+<input type= button value="Replace" onClick="{
+   document.getElementById('myOut').innerHTML= document.getElementById('myArea').value.replace('T','O')
+}">
+
+
+
+<input type= button value="Split" onClick="{
+   document.getElementById('myOut').innerHTML= document.getElementById('myArea').value.split(' ')
+}">
+
+
+
+<input type= button value="Slice" onClick="{
+   document.getElementById('myOut').innerHTML= document.getElementById('myArea').value.slice(1,5)
+}">
+
+
+
+<input type= button value="bold" onClick="{
+   document.getElementById('myOut').innerHTML= document.getElementById('myArea').value.bold()
+}">
+
+
+
+<input type= button value="italics" onClick="{
+   document.getElementById('myOut').innerHTML= document.getElementById('myArea').value.italics()
+}">
+
+
+
+
+<input type= button value="First Letter" onClick="{
+   document.getElementById('myOut').innerHTML= document.getElementById('myArea').value.charAt()
+}">
+
+
+
+
+<input type= button value="big" onClick="{
+   document.getElementById('myOut').innerHTML= document.getElementById('myArea').value.big()
+}">
+
+
+
+<input type= button value="small" onClick="{
+   document.getElementById('myOut').innerHTML= document.getElementById('myArea').value.small()
+}">
+
+
+
+<button onclick="{
+  look = new RegExp('e');
+  document.getElementById('myOut').innerHTML = look.test(document.getElementById('myArea').value);
+}">Test for "e"(RegExp)</button>
+
+
+
+
+
+
+<br><br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+
+

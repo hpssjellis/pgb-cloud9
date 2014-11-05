@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.phonegap4.example3"
+        versionCode = "10" 
+        version     = "2.0.2" >
+
+    <preference name="phonegap-version" value="3.4.0" />
+    <!-- versionCode is optional and Android only -->
+
+
+
+    <gap:plugin name="org.apache.cordova.core.media" /> -
+    
+    
+    <gap:plugin name="com.rjfun.cordova.plugin.lowlatencyaudio"  /> 
+    
+    
+  <!--  <access origin="http://ibeat.org" subdomains="true" /> 
+    <access origin="http://127.0.0.1*" /> -->
+    
+    <access origin="*" />
+    <access origin="http://127.0.0.1*"/>
+      
+    
+    
+
+</widget>

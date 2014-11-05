@@ -1,0 +1,141 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>AJAX Post form demo</title>
+<script type="text/javascript">
+<!--
+
+
+var loadingmessage = 'Processing...';
+
+
+
+
+function setAjax(){
+   var xmlHttp;
+   try{
+      xmlHttp=new XMLHttpRequest(); // Firefox, Opera 8.0+, Safari
+      return xmlHttp;
+   }
+   catch (e){
+      try{
+         xmlHttp=new ActiveXObject("Msxml2.XMLHTTP"); // Internet Explorer
+         return xmlHttp;
+      }
+      catch (e){
+         try{
+            xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+            return xmlHttp;
+         }
+         catch (e){
+            alert("Your browser does not support AJAX!");
+            return false;
+         }
+     }
+   }
+}
+
+
+
+function myAjax(f, url, myDivToChange) {
+   var poststr = getFormValues(f);
+    postData(url, poststr, myDivToChange);
+}
+
+
+
+function postData(url, parameters, myDivToChange2){
+   var xmlHttp = setAjax();
+
+   xmlHttp.onreadystatechange =  function(){
+      if(xmlHttp.readyState > 0 && xmlHttp.readyState < 4){
+          document.getElementById(myDivToChange2).innerHTML=loadingmessage;
+      }
+      if (xmlHttp.readyState == 4) {
+
+
+             // this is where the magic occcurs
+
+         document.getElementById(myDivToChange2).innerHTML=xmlHttp.responseText+' data sent was '+parameters;
+
+
+
+
+      }
+   }
+
+   xmlHttp.open("POST", url, true);
+   xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+   xmlHttp.send(parameters);
+}
+
+function getFormValues(fobj){
+   var str = "";
+   var valueArr = null;
+   var val = "";
+   var cmd = "";
+
+   for(var i = 0;i < fobj.elements.length;i++){
+      switch(fobj.elements[i].type){
+         case "text":
+            str += fobj.elements[i].name +"=" + escape(fobj.elements[i].value) + "&";
+            break;
+
+         case "textarea":
+            str += fobj.elements[i].name +"=" + escape(fobj.elements[i].value) + "&";
+            break;
+
+         case "select-one":
+             str += fobj.elements[i].name +"=" + fobj.elements[i].options[fobj.elements[i].selectedIndex].value + "&";
+             break;
+     }
+   }
+   str = str.substr(0,(str.length - 1));
+   return str;
+}
+
+//--></script>
+
+
+
+
+
+
+</head>
+
+<body onload="document.all.myForm.myName.select()">
+
+
+<form id="myForm">
+
+Type in the boxes to activate AJAX
+<input type="text" name="myName" size="20" onKeyUp="{myAjax(this.form, 'http://www.yourURL.com/yourFolder/ajax.php', 'myDiv1')}">
+<textarea name="myArea"                    onKeyUp="{myAjax(this.form, 'http://www.yourURL.com/yourFolder/ajax.php', 'myDiv1')}"></textarea>
+<input type=text name="myOther" value=what onKeyUp="{myAjax(this.form, 'http://www.yourURL.com/yourFolder/ajax.php', 'myDiv1')}">
+
+
+<div id="myDiv1" style="color: blue;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+
+
+
+
+
+
+</body>
+</html>

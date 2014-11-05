@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor=grey>
+
+
+
+<svg  width="600" height="500">
+  
+  <line x1="0" y1="0" x2="200" y2="20" style="stroke:rgb(255,55,0);stroke-width:2" />
+  
+  <rect width="80" height="60" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)">
+      <animate attributeType="CSS" attributeName="opacity" from="1" to="0" dur="5s" repeatCount="indefinite" />
+  </rect>    
+  
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+  
+  <path d="M550 400 L75 200 L225 200 Z"  fill="green" />
+  
+  <polyline points="0,0 0,20 20,20 20,40 40,40 40,60" fill="red" />
+  
+  <a xlink:href="http://www.w3schools.com/svg/" target="_blank">
+      <text x="400" y="20" style="fill:blue;"  transform="rotate(30 20,40)" >Several lines:
+         <tspan x="400" y="45">First line.</tspan>
+         <tspan x="400" y="70"  >Second line.</tspan>
+      </text>
+  </a>
+  
+
+  
+</svg>
+
+<hr>
+
+
+<input type=button value="DrawStar" style="font-size:25px" onclick="{location = 'x22-DrawStar.html'}">
+
+
+<input type=button value="SVG and CSS Animation" style="font-size:25px" onclick="{location = 'x22-svgCSS.html'}">
+
+
+<input type=button value="SVG and javascript Animation" style="font-size:25px" onclick="{location = 'x22-svgJs.html'}">
+
+<input type=button value="animate4 not working in phonegap" style="font-size:25px" onclick="{location = 'x22-animate4.html'}">
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+
+
+</body>
+</html>

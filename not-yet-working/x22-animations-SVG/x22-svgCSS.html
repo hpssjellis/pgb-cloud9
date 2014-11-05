@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+
+#myDiv1 {   
+  width:100px;
+  height:100px;
+  background:red;
+  position:relative;
+
+}
+
+
+
+
+.myAni {   
+-webkit-animation-name: myFirst;
+-webkit-animation-duration:3s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-timing-function: ease;
+-webkit-animation-fill-mode: forwards;
+}
+
+
+
+
+
+@-webkit-keyframes myFirst {     
+  0%   {background:red;   left:0px; top:0px;}
+  25%  {background:yellow; left:200px; top:0px; opacity: 0.3;}
+  50%  {background:blue;  left:200px; top:200px; -webkit-transform: scale(2.1) rotate(50deg); }
+  75%  {background:green;  left:0px; top:200px;}
+  100% {background:red;    left:0px; top:0px; }
+
+
+
+}
+
+</style>
+
+
+
+
+
+</head>
+<body>
+
+<p><b>Note:</b> This CSS animations example has been optimized for Phonegap and does not include the standard 
+
+format for non-chrome or safari browsers</p>
+
+
+
+<input id="myGoButton" type=button value= go onclick="{
+
+   if (document.getElementById('myGoButton').value =='go') {
+       document.getElementById('myDiv1').className ='myAni';
+       setTimeout(function() {
+           document.getElementById('myDiv1').className ='myAniNot';
+           document.getElementById('myGoButton').value= 'go'
+       }, 3000);
+       document.getElementById('myGoButton').value= 'running'
+   }
+}">
+
+
+
+
+
+<div id="myDiv1"  ><img src="myPic1.png" width=40>
+
+<svg  width="600" height="500">
+  
+  <line x1="0" y1="0" x2="200" y2="20" style="stroke:rgb(255,55,0);stroke-width:2" />
+  
+  <rect width="80" height="60"  x="200" y="200" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)">
+      <animate attributeType="CSS" attributeName="opacity" from="1" to="0" dur="5s" repeatCount="indefinite" />
+  </rect>    
+  
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+  
+  <path d="M550 400 L75 200 L225 200 Z"  fill="green" />
+  
+  <polyline points="0,0 0,20 20,20 20,40 40,40 40,60" fill="red" />
+
+  <text x="300" y="200" style="fill:red;"  >Simple Text</text>
+ 
+  <a xlink:href="http://www.w3schools.com/svg/" target="_blank">
+      <text x="400" y="20" style="fill:blue;"  transform="rotate(30 20,40)" >Several lines:
+         <tspan x="400" y="45">First line.</tspan>
+         <tspan x="400" y="70"  >Second line.</tspan>
+      </text>
+  </a>
+  
+
+  
+</svg>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<br>At the bottom of every page make sure you include the following button:<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
+
+
+<hr>
+
+
+  -webkit-animation:myfirst 3s linear 1s infinite alternate;
+
+
+
+
+
+
+
+</body>
+</html>
