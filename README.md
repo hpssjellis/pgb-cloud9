@@ -7,7 +7,9 @@ creat new box -- from url
 https://github.com/hpssjellis/pgb-cloud9.git
 
 in terminal type 
+
 npm install
+
 npm start
 
 preview -->web server
