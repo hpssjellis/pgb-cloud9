@@ -1,38 +1,85 @@
 
 <script>
+document.myClass = new Array()
+document.myCounter = 0
+
+
+// set the object
 function myStudent(myAge, myName, myImg){
    this.myStudentAge = myAge
    this.myStudentName = myName
    this.myStudentImage = myImg
    this.myInfo = mystudentInfo
+      this.myReturn = myReturnInfo
 }
 
 function mystudentInfo(){
-   document.getElementById('my1').innerHTML += ' My name is ' +
-   this.myStudentName + ' I am ' + this.myStudentAge +
-   ' years old. Here is my picture <img width=70 src ='+this.myStudentImage+'><br>'
+   document.getElementById('my1').innerHTML = ' My name is ' + this.myStudentName + ' I am ' + this.myStudentAge +' years old. Here is my picture <img width=70 src ='+this.myStudentImage+'><br>'
 }
+
+
+function myReturnInfo(){
+   return ' My name is ' + this.myStudentName + ' I am ' + this.myStudentAge +' years old. Here is my picture <img width=70 src ='+this.myStudentImage+'><br>'
+}
+
+
+
+
+
+
+
+
 </script>
 
+
+
+<h3>Instructions:</h3>
+Pass: Make several more buttons that add other objects.<br>
+Excellent: Use local storage to save all object data as a local database<br>
+
 <input type=button value="set Fred" onClick="{
-   Fred=new myStudent('17','Fred','http://www.clker.com/cliparts/r/6/N/B/r/E/blue-stick-man-hi.png')
-   Fred.myInfo()
-}">
+   document.myCounter ++
+   document.myClass[document.myCounter] = new myStudent('17','Fred','http://www.clker.com/cliparts/r/6/N/B/r/E/blue-stick-man-hi.png')
+   document.myClass[document.myCounter].myInfo()
+}"><br>
 
 <input type=button value="set Mary" onClick="{
-   Mary=new myStudent('19','Mary','http://www.clker.com/cliparts/D/u/J/o/g/v/light-pink-stick-man-hi.png')
-   Mary.myInfo()
-}">
+   document.myCounter ++
+   document.myClass[document.myCounter] = new myStudent('19','Mary','http://www.clker.com/cliparts/D/u/J/o/g/v/light-pink-stick-man-hi.png')
+   document.myClass[document.myCounter].myInfo()
+}"><br>
 
-<input type=button value="set and show database" onClick="{
-   myClass = new Array()
-   myClass[0] = new myStudent('17','Fred','http://www.clker.com/cliparts/r/6/N/B/r/E/blue-stick-man-hi.png')
-   myClass[1] = new myStudent('19','Mary','http://www.clker.com/cliparts/D/u/J/o/g/v/light-pink-stick-man-hi.png')
 
-   for (myLoop=0; myLoop < myClass.length; myLoop++){
-      myClass[myLoop].myInfo()
+
+
+<input type=button value="set Dynamic" onClick="{
+   document.myCounter ++
+   document.myClass[document.myCounter] = new myStudent(document.all.myAge.value, document.all.myName.value, document.all.myPic.value)
+   document.myClass[document.myCounter].myInfo()
+}"><br>
+
+
+<input type=text value=18 id="myAge">
+<input type=text value=Joe id="myName">
+<input type=text size=70 value="http://www.clker.com/cliparts/d/e/d/5/12571196281934263158goat-th.png" id="myPic"><br>
+
+
+<br>
+
+
+
+<hr>
+
+<input type=button value="show database" onClick="{
+   var temp = ''
+   for (myLoop=1; myLoop <= document.myCounter; myLoop++){
+     temp += '#'+myLoop + ' ' + document.myClass[myLoop].myReturn()
+
    }
+   document.getElementById('my1').innerHTML = temp
 }">
+
+<hr>
 
 <div id="my1">results go here</div> 
 
