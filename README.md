@@ -12,7 +12,7 @@ npm install
 
 npm start
 
-preview -->web server
+preview -->premium with web server
 
 enter that url in the phonegap developer app on your mobile device
 
