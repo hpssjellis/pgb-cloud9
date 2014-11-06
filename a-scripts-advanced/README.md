@@ -2,12 +2,12 @@ nitrous-scripts
 ===============
 
 
-index-teacher.html
+#index-teacher.html
 
 Copy the code in this file to put at the top of the teachers cloud9 index.html page. This will allow entering each student and a link to their sites for easy marking and student feedback.
 
 
-Advanced scripts for nitrous.io
+#Advanced scripts for nitrous.io
 
 You should know a bit of linux commands such as:
 
