@@ -10,7 +10,12 @@ in terminal type
 
 npm install
 
-npm start
+Find the cloud9.js file right click and choose run
+Note: only run the cloud9.js file, if you run an html file it will load appache2 webserver and will stop the correct application. To fix this issue in a terminal type
+
+killall -9 apache2
+
+Then run the cloud9.js file.
 
 preview -->premium with web server
 
