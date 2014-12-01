@@ -1,0 +1,64 @@
+<script>
+
+function myReplace(myInString) {
+  var myRegExp = new RegExp('"', "gi")   
+  // g= global i= case insensitive
+ 
+  return myInString.replace(myRegExp, "")
+
+}
+</script>
+
+
+<h2 align=center> Real world string issue solved by ________</h2>
+<b>Instructions:Often data gets passed around using complex strings that you then have to manipulate.<br>
+Pass: Make a button to put the value after "id" into the text field called "myId"<br>
+Great: Have a button put all the values into the proper text fields, even if you are not sure of the original order.<br>
+Hint: string.split(",") splits a string into array components<br><br><br>
+
+
+
+
+<textarea id="myIn1" rows=8 cols=70 wrap=false>
+
+  "id": "0123456789abcdef01234567",
+  "name": "teapot",
+  "connected": true,
+  "return_value": 1
+
+</textarea><br>
+
+
+
+<input type=button value="remove quotes" onclick="{
+   document.all.myIn1.value = myReplace(document.all.myIn1.value)
+
+}">
+
+
+
+<input type=button value="YouDoIt" onclick="{
+
+
+
+   alert(document.all.myIn1.value)
+
+
+
+}"><br><br>
+
+
+
+myId:<input type=text id="myId"> <br>
+myName:<input type=text id="myName"> <br>
+myConnected:<input type=text id="myConnected"> <br>
+myReturnValue:<input type=text id="myReturnValue"> <br>
+
+
+<br>At the bottom of every page make sure you include the following button:
+<br>
+
+<input type=button value="Back" style="font-size:25px" onclick="{
+   location='window.history.back'
+}">
+<br><br>
