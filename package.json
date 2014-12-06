@@ -7,7 +7,7 @@
         "url": "https://github.com/hpssjellis/pgb-cloud9.git"
 		
     },
-    "private": "true",
+    "private": "false",
     "scripts": {
         "start": "node cloud9.js"
     },
