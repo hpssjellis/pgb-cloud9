@@ -9,6 +9,17 @@ Copy the code in this file to put at the top of the teachers cloud9 index.html p
 
 #Advanced scripts for nitrous.io
 
+Note: right click your www folder to download a backup called www.tar.gz
+
+to restore your backup, upload the file then find where the www.tar.gz file is and type
+
+tar xzf www.tar.gz
+
+that will restore your entire folder.
+
+
+
+
 You should know a bit of linux commands such as:
 
 pwd  (shows where you are)
@@ -29,6 +40,21 @@ ls -la   (shows all files and attributes including hidden files)
 
 ./myBashFile.sh   (activates the file)
 
+
+
+Note: Students should only activate the cloud9.js file using the run command.
+Sometimes students accidentally activate the index.html file with the run command. that is BAD, BAD, BAD it acti8vates apache2 which you can then stop using the killall comand
+
+See if apache2 is running using 
+
+ps -ax
+
+stop apache2 using
+
+killall -9 apache2
+
+
+then reactivate cloud9.js by choosing to run it.
 
 These scripts should be in the correct folder when you activate them. Good idea to drag them into the main workspace folder from your repository.
 
