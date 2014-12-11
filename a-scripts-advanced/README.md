@@ -66,13 +66,34 @@ Note: 2 files in this directory (pakage.json and Procfile) are needed in the mai
 
 Note: A few files have .php endings these are for working with AJAX. php files can not work directly on a mobile app since a mobile app is not a php server. 
 
-I tried making my nitrous box into a php server, which is easy to do, just not at the same time that it is a node server. The trick is to just make a new login with a new box for all your classes php files. Then each person can copy the correct code for their app.
 
-Commands to setup a php server
+Cloud9   http://c9.io auto sets up a demo-project workspace that has a running php server. 
+php -- index.php  (run) starts the php capable apache2 server
 
-parts install php5
+You can link your phonegap apps to this url for development of php server side information.
 
-parts restart apache2      (or parts start apache2)
+Databases are a bit more complex.
 
-note the www folder needs to be in the workspace folder not like our setup where it is inside another folder.
+Unless you can run a php script that sets up your database you will need to install phpmyadmin in the demo-project on cloud9.
+
+In the terminal enter
+
+mysql-ctl start
+phpmyadmin-ctl install
+
+You will be given a link to click 
+The username will be the same as your login username. I suggest setting a password.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
