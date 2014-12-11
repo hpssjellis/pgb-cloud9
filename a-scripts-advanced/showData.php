@@ -3,11 +3,11 @@
 
 /********** Access the database      **********/
 
-   $username = "hpssStudent";
-   $password = "pass2";
+   $username = "myusername";
+   $password = "mypass";
    $host = "localhost";
-   $database = "cp12";
-   $table = "cp12Data";
+   $database = "myDatabaseName";
+   $table = "mytableName";
 		
    mysql_connect($host,$username,$password)or die(mysql_error());
    mysql_select_db($database)or die(mysql_error());
