@@ -84,6 +84,10 @@ phpmyadmin-ctl install
 You will be given a link to click 
 The username will be the same as your login username. I suggest setting a password.
 
+You can then use phpmyadmin to seup your databases.
+
+Any files in this folder with the .php extension need to go in the php folder of the demo=project
+
 
 
 
