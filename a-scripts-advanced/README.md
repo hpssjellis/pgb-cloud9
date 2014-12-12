@@ -92,6 +92,8 @@ The username will be the same as your login username. DO NOT SET A ROOT PASSWORD
  /q to quit
  
  record that hostname as this seems to be the only way to find it.
+ 
+ Now you can change your root password, but it is up to you since it is very hard to delete it fully once it is set. 
 
 You can then use phpmyadmin to seup your databases.
 
