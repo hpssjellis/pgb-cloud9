@@ -79,6 +79,7 @@ Unless you can run a php script that sets up your database you will need to inst
 In the terminal enter
 
 mysql-ctl start
+
 phpmyadmin-ctl install
 
 You will be given a link to click 
