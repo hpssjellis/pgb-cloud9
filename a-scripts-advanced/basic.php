@@ -4,7 +4,7 @@
     $myHost = "myUserName-demo-project-1155012";    // This was very difficult. In a terminal type
                                                    // mysql-ctl cli
                                                    // SHOW VARIABLES WHERE Variable_name = 'hostname';
-                                                   // /q to quit
+                                                   // \q to quit
 
     $myUser = "myUserName";                         // Your Cloud 9 username
     $myPass = "";                                  // Remember, there is NO password!
