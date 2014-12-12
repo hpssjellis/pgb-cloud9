@@ -8,8 +8,8 @@
 
     $myUser = "myUserName";                         // Your Cloud 9 username
     $myPass = "";                                  // Remember, there is NO password!
-    $myDatabase = "myDatabaseName";                          // Your database name you want to connect to
-    $myTable = "myTableNamea";                         // Your database table
+    $myDatabase = "c9";                            // Your database name you want to connect to
+    $myTable = "cp12Data";                         // Your database table
     $myPort = 3306;                                // The port #. It is always 3306
 
     $myConnection = mysqli_connect($myHost, $myUser, $myPass, $myDatabase, $myPort)or die(mysql_error());
