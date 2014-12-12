@@ -93,9 +93,20 @@ The username will be the same as your login username. DO NOT SET A ROOT PASSWORD
  
  record that hostname as this seems to be the only way to find it.
  
- Now you can change your root password, but it is up to you since it is very hard to delete it fully once it is set. 
+ Now you can change your root password, but it is up to you since it is very hard to delete it fully once it is set. There is a button on the change password link that allows "no Password" but I have found it finicky. logout login and hopefully it clears your password so that you can reload
+ 
+  mysql-ctl cli
+  
+  
+  
 
-You can then use phpmyadmin to seup your databases.
+You can then use phpmyadmin to setup your databases.
+
+myID  INT   Primary   A_I
+myName   TEXT 
+
+The insert a few names the MYID shoud A_I which stands for auto_increment.
+
 
 Any files in this folder with the .php extension need to go in the php folder of the demo=project
 
