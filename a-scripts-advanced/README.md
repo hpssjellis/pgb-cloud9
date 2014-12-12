@@ -83,7 +83,15 @@ mysql-ctl start
 phpmyadmin-ctl install
 
 You will be given a link to click 
-The username will be the same as your login username. I suggest setting a password.
+The username will be the same as your login username. DO NOT SET A ROOT PASSWORD as it messes up the next command
+
+ mysql-ctl cli
+ 
+ SHOW VARIABLES WHERE Variable_name = 'hostname';
+ 
+ /q to quit
+ 
+ record that hostname as this seems to be the only way to find it.
 
 You can then use phpmyadmin to seup your databases.
 
