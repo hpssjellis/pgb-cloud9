@@ -1,6 +1,15 @@
 pgb-cloud9
 =====================
 
+
+See the youtube video at 
+
+https://www.youtube.com/watch?v=5K75wV8FybQ
+
+or google youtube videos " What to do Aafter the hour of code"
+
+
+
 Sign up for cloud9
 creat new box -- from url
 
