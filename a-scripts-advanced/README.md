@@ -89,7 +89,7 @@ The username will be the same as your login username. DO NOT SET A ROOT PASSWORD
  
  SHOW VARIABLES WHERE Variable_name = 'hostname';
  
- /q to quit
+ \q to quit
  
  record that hostname as this seems to be the only way to find it.
  
