@@ -102,7 +102,15 @@ The username will be the same as your login username. DO NOT SET A ROOT PASSWORD
 
 You can then use phpmyadmin to setup your databases.
 
+find database C9
+
+table 
+
+cp12Data  2 fields
+
+
 myID  INT   Primary   A_I
+
 myName   TEXT 
 
 The insert a few names the MYID shoud A_I which stands for auto_increment.
