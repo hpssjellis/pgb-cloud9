@@ -1,5 +1,17 @@
 
 <?php
+/********** Access the database      **********/
+
+   $username = "myUsername";
+   $password = "myPass";
+   $host = "localhost";
+   $database = "myDatabase";
+   $table = "myTableName";
+		
+   mysql_connect($host,$username,$password)or die(mysql_error());
+   mysql_select_db($database)or die(mysql_error());
+
+
 
 /********** Get the old post information      **********/
 
@@ -26,24 +38,6 @@
 
 <?php
 
-/********** Access the database      **********/
-
-
-
-   $username = "myUsername";
-   $password = "myPass";
-   $host = "localhost";
-   $database = "myDatabase";
-   $table = "myTableName";
-		
-   mysql_connect($host,$username,$password)or die(mysql_error());
-   mysql_select_db($database)or die(mysql_error());
-
-
-
-
-
-
 
 /********** If a name is not empty then update a record      **********/
 
@@ -56,16 +50,9 @@
    }
 
 
-
-
+/**********   search the database      **********/
 
    $sql = "SELECT*FROM $table";
-
-
-
-
-
-
 
 
    $result = mysql_query($sql);
@@ -84,11 +71,6 @@
          echo "<img src='$row[myImageAt]' width=20> <hr>";
       }
    }
-
-
-
-
-
 
 
 
