@@ -29,7 +29,7 @@
 
 ?>
 
-<form action="t4a8update3.php" method="post">
+<form action="updateData.php" method="post">
 	
    Your name: <input type="text" name="myNamePost"  value="<?php echo $myNamePHP; ?>"><br>
    Your X location: <input type="text" name="myXPost"  value="<?php echo $myXPHP; ?>"><br>
