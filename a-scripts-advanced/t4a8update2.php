@@ -2,15 +2,15 @@
 <?php
 /********** Access the database      **********/
 
-   $username = "myUsername";
-   $password = "myPass";
-   $host = "localhost";
-   $database = "myDatabase";
-   $table = "myTableName";
-		
-   mysql_connect($host,$username,$password)or die(mysql_error());
-   mysql_select_db($database)or die(mysql_error());
 
+    $myHost = "127.0.0.1";                         // Sets localhost
+    $myUser = getenv('C9_USER');                   // Your Cloud 9 username
+    $myPass = "";                                  // Remember, there is NO password!
+    $myDatabase = "cp12";                          // Your database name you want to connect to
+    $myTable = "cp12Data";                         // Your database table
+    $myPort = 3306;                                // The port #. It is always 3306
+    $myConnection = mysqli_connect($myHost, $myUser, $myPass, $myDatabase, $myPort)or die(mysql_error());
+    // And now to perform a simple query to make sure it's working
 
 
 /********** Get the old post information      **********/
@@ -26,7 +26,7 @@
 
 ?>
 
-<form action="T4A8update.php" method="post">
+<form action="T4A8update2.php" method="post">
 	
    Your name: <input type="text" name="myNamePost"  value="<?php echo $myNamePHP; ?>"><br>
    Your X location: <input type="text" name="myXPost"  value="<?php echo $myXPHP; ?>"><br>
@@ -52,7 +52,13 @@
 
 /**********   search the database      **********/
 
-   $sql = "SELECT*FROM $table";
+    $myQuery = "SELECT * FROM $myTable";
+    $Result = mysqli_query($myConnection, $myQuery);
+
+
+
+
+
 
 
    $result = mysql_query($sql);
