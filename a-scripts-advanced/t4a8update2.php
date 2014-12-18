@@ -6,7 +6,7 @@
     $myHost = "127.0.0.1";                         // Sets localhost
     $myUser = getenv('C9_USER');                   // Your Cloud 9 username
     $myPass = "";                                  // Remember, there is NO password!
-    $myDatabase = "cp12";                          // Your database name you want to connect to
+    $myDatabase = "c9";                          // Your database name you want to connect to
     $myTable = "cp12Data";                         // Your database table
     $myPort = 3306;                                // The port #. It is always 3306
     $myConnection = mysqli_connect($myHost, $myUser, $myPass, $myDatabase, $myPort)or die(mysql_error());
@@ -42,7 +42,7 @@
 /********** If a name is not empty then update a record      **********/
 
    if ($myNamePHP != ''){	
-      if (!mysql_query("UPDATE $table SET myX ='$myXPHP', myY ='$myYPHP'  WHERE myName ='$myNamePHP'  "))
+      if (!mysql_query("UPDATE $myTable SET myX ='$myXPHP', myY ='$myYPHP'  WHERE myName ='$myNamePHP'  "))
         {
           die('Error: ' . mysql_error());
          }
@@ -53,15 +53,10 @@
 /**********   search the database      **********/
 
     $myQuery = "SELECT * FROM $myTable";
-    $Result = mysqli_query($myConnection, $myQuery);
+    $result = mysqli_query($myConnection, $myQuery);
 
 
 
-
-
-
-
-   $result = mysql_query($sql);
    if(mysql_num_rows($result) >0){
       while($row=mysql_fetch_array($result)){
 
