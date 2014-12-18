@@ -66,6 +66,11 @@
    $sql = "SELECT*FROM $table";
 
  
+   //$sql = "SELECT * FROM $table ORDER BY myX"; 
+   //$sql = "SELECT * FROM $table ORDER BY myX  ASC"; // may also use DESC 
+   //$sql = "SELECT * FROM $table WHERE myName='Peter'"; 
+   //$sql = "SELECT myname, myX, myY FROM $table WHERE myName='Peter'"; 
+   //$sql = "SELECT * FROM $table WHERE myName='Peter' AND myX = '10'"; // could also use OR
   
    
    
