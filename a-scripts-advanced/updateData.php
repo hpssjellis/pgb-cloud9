@@ -55,7 +55,7 @@
         {
           die('Error: ' . mysql_error());
          }
-      echo "1 record updated<br>";
+      echo "1 record updated<br><hr>";
    }
 
 
