@@ -91,22 +91,23 @@ find database C9
 
 Create table
 
-c9table 3 columns (higher number if more columns = fileds)
+c9table 4 columns 
 
 myID INT Primary A_I
 
 myName TEXT
 
 myX   INT   click not null
-
-repeat for other columns
-
+myY   INT   click not null
 
 
+then insert a few entries using simple names like fred tom peter etc
 
 
 Any files in this project with the .php extension need to go in the php folder of the demo=project
 oe make a new HTML5 or PHP project using cloud9
+
+use the file updateData.php
 
 
 
