@@ -3,7 +3,8 @@
 
 /********** Access the database      **********/
 
-
+ 
+ 
 
    $username = getenv('C9_USER');
    $password = "";
@@ -14,7 +15,9 @@
    mysql_connect($host,$username,$password)or die(mysql_error());
    mysql_select_db($database)or die(mysql_error());
 
-
+ 
+ 
+ 
 
 /********** Get the old post information      **********/
 
@@ -56,22 +59,25 @@
    }
 
 
-
+ 
+ 
 
 
    $sql = "SELECT*FROM $table";
 
-
-
-
-
-
+ 
+  
+   
+   
+   
 
 
    $result = mysql_query($sql);
    if(mysql_num_rows($result) >0){
       while($row=mysql_fetch_array($result)){
-
+ 
+ 
+ 
 
 /********** here we print each database entry      **********/
 
@@ -85,7 +91,9 @@
       }
    }
 
-
+ 
+ 
+ 
 
 mysql_close();     // close the database
 ?>
