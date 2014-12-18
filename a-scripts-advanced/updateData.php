@@ -52,7 +52,7 @@
         {
           die('Error: ' . mysql_error());
          }
-      echo "1 record updated";
+      echo "1 record updated<br>";
    }
 
 
