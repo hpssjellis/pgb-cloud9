@@ -1,16 +1,19 @@
 
 <?php
+
 /********** Access the database      **********/
 
 
-    $myHost = "127.0.0.1";                         // Sets localhost
-    $myUser = getenv('C9_USER');                   // Your Cloud 9 username
-    $myPass = "";                                  // Remember, there is NO password!
-    $myDatabase = "c9";                          // Your database name you want to connect to
-    $myTable = "cp12Data";                         // Your database table
-    $myPort = 3306;                                // The port #. It is always 3306
-    $myConnection = mysqli_connect($myHost, $myUser, $myPass, $myDatabase, $myPort)or die(mysql_error());
-    // And now to perform a simple query to make sure it's working
+
+   $username = getenv('C9_USER');
+   $password = "";
+   $host = "127.0.0.1";
+   $database = "c9";
+   $table = "c9table";
+		
+   mysql_connect($host,$username,$password)or die(mysql_error());
+   mysql_select_db($database)or die(mysql_error());
+
 
 
 /********** Get the old post information      **********/
@@ -26,7 +29,7 @@
 
 ?>
 
-<form action="T4A8update2.php" method="post">
+<form action="t4a8update3.php" method="post">
 	
    Your name: <input type="text" name="myNamePost"  value="<?php echo $myNamePHP; ?>"><br>
    Your X location: <input type="text" name="myXPost"  value="<?php echo $myXPHP; ?>"><br>
@@ -39,10 +42,13 @@
 <?php
 
 
+
+
+
 /********** If a name is not empty then update a record      **********/
 
    if ($myNamePHP != ''){	
-      if (!mysql_query("UPDATE $myTable SET myX ='$myXPHP', myY ='$myYPHP'  WHERE myName ='$myNamePHP'  "))
+      if (!mysql_query("UPDATE $table SET myX ='$myXPHP', myY ='$myYPHP'  WHERE myName ='$myNamePHP'  "))
         {
           die('Error: ' . mysql_error());
          }
@@ -50,13 +56,19 @@
    }
 
 
-/**********   search the database      **********/
-
-    $myQuery = "SELECT * FROM $myTable";
-    $result = mysqli_query($myConnection, $myQuery);
 
 
 
+   $sql = "SELECT*FROM $table";
+
+
+
+
+
+
+
+
+   $result = mysql_query($sql);
    if(mysql_num_rows($result) >0){
       while($row=mysql_fetch_array($result)){
 
@@ -75,8 +87,7 @@
 
 
 
-
-mysql_close();    
+mysql_close();     // close the database
 ?>
 
 
