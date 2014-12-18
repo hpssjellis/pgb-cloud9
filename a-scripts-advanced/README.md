@@ -76,48 +76,37 @@ Databases are a bit more complex.
 
 Unless you can run a php script that sets up your database you will need to install phpmyadmin in the demo-project on cloud9.
 
+
+
 In the terminal enter
 
 mysql-ctl start
 
 phpmyadmin-ctl install
 
-You will be given a link to click 
-The username will be the same as your login username. DO NOT SET A ROOT PASSWORD as it messes up the next command
-
- mysql-ctl cli
- 
- SHOW VARIABLES WHERE Variable_name = 'hostname';
- 
- \q to quit
- 
- record that hostname as this seems to be the only way to find it.
- 
- Now you can change your root password, but it is up to you since it is very hard to delete it fully once it is set. There is a button on the change password link that allows "no Password" but I have found it finicky. logout login and hopefully it clears your password so that you can reload
- 
-  mysql-ctl cli
-  
-  
-  
 
 You can then use phpmyadmin to setup your databases.
 
 find database C9
 
-table 
+Create table
 
-cp12Data  2 fields
+c9table 3 columns (higher number if more columns = fileds)
+
+myID INT Primary A_I
+
+myName TEXT
+
+myX   INT   click not null
+
+repeat for other columns
 
 
-myID  INT   Primary   A_I
-
-myName   TEXT 
-
-The insert a few names the MYID shoud A_I which stands for auto_increment.
 
 
-Any files in this folder with the .php extension need to go in the php folder of the demo=project
 
+Any files in this project with the .php extension need to go in the php folder of the demo=project
+oe make a new HTML5 or PHP project using cloud9
 
 
 
