@@ -52,7 +52,7 @@ function myHitXY(my1,X,Y){
    top1    = parseInt(document.getElementById(my1).style.top)   
    bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
 
-   document.getElementById('myShowDiv1').innerHTML = right1  +', '+ left1  +', '+   top1   +', '+  bottom1
+   document.getElementById('myShowDiv1').innerHTML = 'move1 x='+right1  +', y='+   top1 
 
    if ((left1   <= X ) &&      	   
        (right1  >= X ) &&
@@ -121,8 +121,8 @@ function checkAll(){
 
 // just shows where your two objects are to help with debugging
 
-   document.getElementById('myShowDiv1').innerHTML = left1  +', '+ right1  +', '+   top1   +', '+  bottom1
-   document.getElementById('myShowDiv2').innerHTML = left2  +', '+ right2  +', '+   top2   +', '+  bottom2
+  // document.getElementById('myShowDiv1').innerHTML = left1  +', '+ right1  +', '+   top1   +', '+  bottom1
+  // document.getElementById('myShowDiv2').innerHTML = left2  +', '+ right2  +', '+   top2   +', '+  bottom2
 
 }
  
@@ -147,6 +147,19 @@ function myAuto(){
 
   document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+document.mySpeedX+'px'
   document.getElementById('move1').style.top  = parseInt(document.getElementById('move1').style.top)+document.mySpeedY+'px'
+
+
+
+// auto moving "move2" should occur here similar to the above.
+//folowing code showes where move 2 and move3, move4 etc are located
+
+document.getElementById('myShowDiv2').innerHTML = 'move2 x='+parseInt(document.getElementById('move2').style.left) +
+', y='+parseInt(document.getElementById('move2').style.top) +
+'<br> move2 x='+parseInt(document.getElementById('move2').style.left) +', y='+parseInt(document.getElementById('move2').style.top) +
+'<br> move2 x='+parseInt(document.getElementById('move2').style.left) +', y='+parseInt(document.getElementById('move2').style.top)
+
+
+
 
 }
 
@@ -263,8 +276,15 @@ Click to hide.
 
 
 
-<input type=button value="Step Right" onclick="{
+<input type=button value="Step Right Move1" onclick="{
     document.getElementById('move1').style.left  = parseInt(document.getElementById('move1').style.left)+5+'px'
+    checkAll()
+}">
+
+
+
+<input type=button value="Step Down Move2" onclick="{
+    document.getElementById('move2').style.top  = parseInt(document.getElementById('move2').style.top)+5+'px'
     checkAll()
 }">
 
