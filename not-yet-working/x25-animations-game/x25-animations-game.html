@@ -67,7 +67,6 @@ function myHitXY(my1,X,Y){
    top1    = parseInt(document.getElementById(my1).style.top)   
    bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
 
-   document.getElementById('myShowDiv1').innerHTML = 'move1 x='+right1  +', y='+   top1 
 
    if ((left1   <= X ) &&      	   
        (right1  >= X ) &&
@@ -85,6 +84,9 @@ function myHitOther(my1,my2){
    right1  = left1 + parseInt(document.getElementById(my1).style.width)
    top1    = parseInt(document.getElementById(my1).style.top)   
    bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+
+
+
 
 
    left2   = parseInt(document.getElementById(my2).style.left)
@@ -152,6 +154,9 @@ function myAuto(){
 
 // auto moving "move2" should occur here similar to the above.
 //folowing code showes where move 2 and move3, move4 etc are located
+
+document.getElementById('myShowDiv1').innerHTML = 'move1 x='+parseInt(document.getElementById('move1').style.left) +
+', y='+parseInt(document.getElementById('move1').style.top)
 
 document.getElementById('myShowDiv2').innerHTML = 'move2 x='+parseInt(document.getElementById('move2').style.left) +
 ', y='+parseInt(document.getElementById('move2').style.top) +
