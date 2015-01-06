@@ -104,6 +104,12 @@ myY   INT   click not null
 then insert a few entries using simple names like fred tom peter etc
 
 
+The webpage to use to access and change the database is callede
+
+updateData.php
+
+It only updates information. Let the students figure out how to Insert new fields into the database.
+
 Any files in this project with the .php extension need to go in the php folder of the demo=project
 oe make a new HTML5 or PHP project using cloud9
 
