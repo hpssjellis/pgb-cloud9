@@ -189,9 +189,18 @@ function myGun(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 <!-- ********************  Here the webpage begins **************************  -->
-
-
 
 
 <!-- ********************  onkeypress just for webpages is useless on mobile apps **************************  -->
@@ -208,8 +217,6 @@ function myGun(){
 myBgObject = eval('document.body');
 
 </script>
-
-
 
 
 
@@ -247,7 +254,6 @@ Click to hide.
 <img  id="move2"  src="myMove2Pic.png" style="position:absolute; width:30px; height:30px;  left:500px; top:240px;"/>
 
 
-
 <input type=button value="Fire" onClick="myGunPrep()">
 
 
@@ -267,7 +273,8 @@ Click to hide.
 
 
 
-<!-- ********************  Now all the buttons. Note: ontouchstart is faster than onclick  **************************  -->
+<!-- ********************  Now all the buttons. 
+Note: ontouchstart is faster than onclick but only works on touch screens or mobile  **************************  -->
 
 
 <input type=button value="BG Faster Down" onClick="myBgSpeedYdown += 1">
@@ -323,11 +330,9 @@ Click to hide.
 
 
 
-
 <br>At the bottom of every page make sure you include the following button:<br>
 
 <input type=button value="Back" style="font-size:25px" onclick="{window.history.back()}"><br><br>
-
 
 </body>
 </html>
