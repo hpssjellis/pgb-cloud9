@@ -1,4 +1,4 @@
-Refer to http://spark.io for how to purchase a spark photon.
+Refer to http://spark.io for how to purchase a $19 spark photon.
 
 This folder shows how to control an arduino style internet capable device using just a web page.
 
