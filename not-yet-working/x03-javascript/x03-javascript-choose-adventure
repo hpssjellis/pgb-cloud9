@@ -1,7 +1,60 @@
 
+<script>
+    document.presentPage = 0
+
+    
+    
+ function myAddButtons(){   
+    // alert(document.presentPage)
+ 
+    
+    if (document.presentPage == 0){
+         document.getElementById('myOutDiv').innerHTML +=  'Choose one: '+
+         '<input type="button" value="turn Left" '+
+         ' onclick="{document.presentPage = 1; myAddButtons();}" >' +
+         '<input type="button" value="turn Right" '+
+         ' onclick="{document.presentPage = 2; myAddButtons();}" >'
+    }
+    
+    
+    
+    if (document.presentPage == 1){
+         document.getElementById('myOutDiv').innerHTML = 'You Leave ' + document.all.myLocation.value +
+         ' <input type="button" value="Go Home" '+
+         ' onclick="{document.presentPage = 2; myAddButtons();}" >' +
+         ' <input type="button" value="Run" '+
+         ' onclick="{document.presentPage = 3; myAddButtons();}" >'
+    }
+    
+    
+        
+    
+    
+    
+    
+    
+    if (document.presentPage == 2){
+         document.getElementById('myOutDiv').innerHTML = 'You Lose!'
+     }   
+         
+         
+         
+    if (document.presentPage == 3){
+         document.getElementById('myOutDiv').innerHTML = 'You Win!'
+        
+    }   
+          
+        
+        
+        
+        
+}
+</script>
+
 
 
 <h2 align=center>Choose Your Own Adventure By ________</h2>
+<h3> Make this story better</h3>
 
 <input id="myLocation" type=text value="Vancouver"> Location<br>
 <input id="myMainCharacter" type=text value="Fred"> Main Character<br>
@@ -10,13 +63,17 @@
 
 <br><input type=button value="Make Story" onclick="{
 // careful here. No Double quotes, lines must end with a plus sign '+' unless it is the last line
+  document.presentPage = 0
 
   document.getElementById('myOutDiv').innerHTML = 'Walking down the street in '+document.all.myLocation.value +
   ', ' + document.all.myMainCharacter.value + ' saw a ...'
   
+  
+  
 
-
+  myAddButtons()
 }">
+
 
 
 <br><br>
