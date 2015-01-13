@@ -1,0 +1,25 @@
+
+
+
+<h2 align=center>Choose Your Own Adventure By ________</h2>
+
+<input id="myLocation" type=text value="Vancouver"> Location<br>
+<input id="myMainCharacter" type=text value="Fred"> Main Character<br>
+
+
+
+<br><input type=button value="Make Story" onclick="{
+// careful here. No Double quotes, lines must end with a plus sign '+' unless it is the last line
+
+  document.getElementById('myOutDiv').innerHTML = 'Walking down the street in '+document.all.myLocation.value +
+  ', ' + document.all.myMainCharacter.value + ' saw a ...'
+  
+
+
+}">
+
+
+<br><br>
+<div id="myOutDiv">The Story will go here.</div>
+
+
