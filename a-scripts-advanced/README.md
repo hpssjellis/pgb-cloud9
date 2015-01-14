@@ -98,6 +98,7 @@ myID INT Primary A_I
 myName TEXT
 
 myX   INT   click not null
+
 myY   INT   click not null
 
 
