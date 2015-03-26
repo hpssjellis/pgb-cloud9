@@ -1,4 +1,4 @@
-nitrous-scripts
+Cloud9-scripts
 ===============
 
 
