@@ -7,6 +7,11 @@ Cloud9-scripts
 Copy the code in this file to put at the top of the teachers cloud9 index.html page. This will allow entering each student and a link to their sites for easy marking and student feedback.
 
 
+#donations.html
+
+Example thank you page for anyone who helps with the course.
+
+
 #Advanced scripts for nitrous.io
 
 Note: right click your www folder to download a backup called www.tar.gz
