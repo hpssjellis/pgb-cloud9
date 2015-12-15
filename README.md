@@ -9,6 +9,11 @@ https://www.youtube.com/watch?v=5K75wV8FybQ
 or google youtube videos " What to do Aafter the hour of code"
 
 
+Note: the not-yet-working folder means these programs have not yet been perfected by the student. All the programs actually work in a very basic way.
+
+
+
+
 
 Sign up for cloud9
 creat new box -- from url
