@@ -12,9 +12,13 @@ var connect = require('connect'),
 
    app.use(phonegap());
    console.log('Ctrl-C to quit');
-   console.log('Enter into Phonegap Developer App the Address');
-   console.log('http://'+process.env.C9_HOSTNAME);
 
 
    var port = process.env.PORT || 3000;
+   
+   
+   console.log('Enter into Phonegap Developer App the Address. Port = '+port+' IP= '+process.env.IP);
+   console.log('');
+   console.log('Click the link below and select open');
+   console.log('http://'+process.env.C9_HOSTNAME);
    app.listen(port);
