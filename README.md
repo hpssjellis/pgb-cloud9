@@ -2,11 +2,24 @@ pgb-cloud9
 =====================
 
 
-See the youtube video at 
 
-https://www.youtube.com/watch?v=5K75wV8FybQ
+An installation video of all but the recent stuff is at
 
-or google youtube videos " What to do Aafter the hour of code"
+
+
+
+https://youtu.be/ReaxoSIM5XQ
+
+
+
+
+
+
+[![Instructional video](http://img.youtube.com/vi/5K75wV8FybQ/0.jpg)](https://youtu.be/5K75wV8FybQ)
+
+
+
+or google youtube videos " What to do after the hour of code"
 
 
 Note: the not-yet-working folder means these programs have not yet been perfected by the student. All the programs actually work in a very basic way.
